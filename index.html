@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+<link rel="stylesheet" href="style.css">
+    <title>Frontend Mentor | FX Checker</title>
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header>
+      <div class="header-logo"><img src="./assets/images/logo.svg" alt="logo"></div>
+      <div class="top-data">
+          <div class="top__currencies-number">55 currencies</div>
+        <p class="top__currencies-number top__currencies-eod">· EOD</p>
+        <p class="top__currencies-number top__currencies-ecb">· ECB data</p>
+      </div>
+    </header>
+
+    <!-- --- markets ticker --- -->
+
+    <section class="section-ticker">
+      <div class="ticker__title"><div class="circle"></div>Live markets</div>
+
+      <!-- ---item1--- -->
+      <div class="ticker__container">
+        <div class="ticker__pairs">
+          <div class="ticker__pairs--currencies">USD/JPY</div>
+          <div class="ticker__pairs--number">157.91</div>
+          <div class="ticker__pairs--movement">
+            <div class="ticker__pairs--rectangle"></div>
+            +0.04%
+          </div>
+        </div>
+      </div>
+
+      <!-- --- item 2--- -->
+          <div class="ticker__container">
+        <div class="ticker__pairs">
+          <div class="ticker__pairs--currencies">USD/JPY</div>
+          <div class="ticker__pairs--number">157.91</div>
+          <div class="ticker__pairs--movement">
+            <div class="ticker__pairs--rectangle"></div>
+            +0.04%
+          </div>
+        </div>
+      </div>
+    </section>
+
+<main>
+
+    <!-- Converter -->
+<section class="section-converter">
+  <h1 class="converter__h1">
+Check the rate
+  </h1>
+
+  <div class="converter__container">
+    <div class="converter__top-wrapper">
+  <!-- --- send container --- -->
+<div class="converter__send-wrapper">
+  <div class="converter__action-amount">
+  <label for="send-amount" class="converter__action">Send</p>
+  <input type="text" name="send-amount" id="send-amount" class="converter__amount" placeholder="1,000"></input></div>
+
+  <!-- --- currency picker --- -->
+   <div class="currency-picker-wrapper01">
+<button type="button" class="currency-dropdown-btn"><div class="currency-flag"></div>USD<div class="currency-caret"></USDdiv></button>
+
+
+<!-- --- currency dropdown list --- -->
+<form class="currency-dropdown">
+  <div class="input-magnifying">
+<input type="text" name="currency-search" id="currency-search" class="currency-search" placeholder="Search currencies..."></div>
+
+<!-- --- popular--- -->
+<div class="currency-category">
+<div class="currency-title-number">
+<p class="currency-title">popular</p>
+<p class="currency-number">3</p></div>
+
+<ul class="currency-popular-list popular-dropdown">
+  <li>
+    <div class="flag-small">
+    <div class="currency-flag"></div>USD<p class="currency-small">US Dollar</p></div>
+    <div class="currecy-check"></div></li>
+     <li>
+    <div class="flag-small">
+    <div class="currency-flag eu-flag"></div>EUR<p class="currency-small">Euro</p></div>
+    <div class="currecy-check"></div></li>
+     <li>
+    <div class="flag-small">
+    <div class="currency-flag uk-flag"></div>GBP<p class="currency-small">British Pound</p></div>
+    <div class="currecy-check"></div></li>
+
+</ul>
+</div>
+
+<!-- --- other currencies --- -->
+
+<div class="currency-category">
+<div class="currency-title-number">
+<p class="currency-title">other currencies</p>
+<p class="currency-number">165</p></div>
+
+<ul class="currency-popular-list other-dropdown">
+  <li>
+    <div class="flag-small">
+    <div class="currency-flag currency-flag2"></div>AED<p class="currency-small">UAE Dirham</p></div>
+    <div class="currecy-check"></div></li>
+      
+</ul>
+</div>
+
+</form>
+
+  </div>
+ 
+
+  </div>
+
+
+
+  <!-- --- swap button --- -->
+   <div class="converter__swap-btn"></div>
+
+   <!-- --- receive container --- -->
+
+<div class="converter__send-wrapper">
+  <div class="converter__action-amount">
+  <label for="receive-amount" class="converter__action">Receive</p>
+  <input type="text" name="receive-amount" id="receive-amount" class="converter__amount converter__amount--receive" placeholder="853.02"></input></div>
+
+    <!-- --- currency picker --- -->
+     <div class="currency-picker-wrapper02">
+<button type="button" class="currency-dropdown-btn currency-dropdown-btn02"><div class="currency-flag currency-flag2"></div>EUR<div class="currency-caret"></div></button>
+
+<!-- --- currency dropdown list --- -->
+<form class="currency-dropdown currency-dropdown02 hide">
+  <div class="input-magnifying">
+<input type="text" name="currency-search" id="currency-search" class="currency-search" placeholder="Search currencies..."></div>
+
+<!-- --- popular--- -->
+<div class="currency-category">
+<div class="currency-title-number">
+<p class="currency-title">popular</p>
+<p class="currency-number">3</p></div>
+
+<ul class="currency-popular-list">
+  <li>
+    <div class="flag-small">
+    <div class="currency-flag"></div>USD<p class="currency-small">US Dollar</p></div>
+    <div class="currecy-check"></div></li>
+      <li>
+    <div class="flag-small">
+    <div class="currency-flag currency-flag2"></div>EU<p class="currency-small">Euro</p></div>
+    <div class="currecy-check hide"></div></li>
+</ul>
+</div>
+
+<!-- --- other currencies --- -->
+
+<div class="currency-category">
+<div class="currency-title-number">
+<p class="currency-title">other currencies</p>
+<p class="currency-number">165</p></div>
+
+<ul class="currency-popular-list">
+  <li>
+    <div class="flag-small">
+    <div class="currency-flag"></div>AED<p class="currency-small">UAE Dirham</p></div>
+    <div class="currecy-check"></div></li>
+      <li>
+    <div class="flag-small">
+    <div class="currency-flag currency-flag2"></div>ARS<p class="currency-small">Argentine Peso</p></div>
+    <div class="currecy-check hide"></div></li>
+</ul>
+</div>
+
+</form>
+
+</div>
+ 
+
+</div>
+</div>
+<div class="converter__bottom-wrapper">
+  <p class="converter__exchange-rate">1 USD = 0.8530 EUR</p>
+<div class="converter__two-btns">
+  <button type="button" class="filled-btn"><div class="star-icon"></div>Favorited</button>
+  <button type="button" class="outlined-btn">Log conversion</button>
+</div>
+
+</div>
+  </div>
+</section>
+
+
+
+<!-- === data section === -->
+
+<section class="section-data">
+
+  <!-- --- tabs --- -->
+  <div class="data__tab-wrapper">
+    <div class="data__tab-item data__tab-item--active">History</div>
+    <div class="data__tab-item">Compare</div>
+    <div class="data__tab-item data__tab-item--number">Favorites
+      <div class="fav-number">10</div>
+    </div>
+    <div class="data__tab-item data__tab-item--number">Log
+      <div class="fav-number log-number">8</div>
+    </div>
+  </div>
+
+  <!-- 📌--- history data cards --- -->
+   <div class="history-container">
+   <div class="data__cards-container">
+
+    <div class="data__cards-wrapper">
+      <div class="data__card">
+        <p class="data__card--title">Open</p>
+        <p class="data__card--rate">0.8516</p>
+      </div>
+          <div class="data__card">
+        <p class="data__card--title">Last</p>
+        <p class="data__card--rate data__card--rate-last">0.8530</p>
+      </div>
+
+        <div class="data__card">
+        <p class="data__card--title">Change</p>
+        <p class="data__card--rate data__card--rate-move">+0.0014</p>
+      </div>
+
+            <div class="data__card">
+        <p class="data__card--title">% Change</p>
+        <div class="data__card--rate data__card--rate-move data__card--rate-move2"><div class="data-triangle"></div>
+          +0.16%</div>
+      </div>
+    </div>
+
+    <!-- --- period tabs--- -->
+     <div class="data__period-wrapper">
+      <div class="data__period--item">1D</div>
+      <div class="data__period--item">1W</div>
+      <div class="data__period--item data__period--item-active">1M</div>
+      <div class="data__period--item">3M</div>
+      <div class="data__period--item">1Y</div>
+      <div class="data__period--item">5Y</div>
+     </div>
+
+   </div>
+
+   <!-- --- chart container --- -->
+
+   <div class="data__chart-container">
+    <div class="data__chart-header">
+<p class="data__chart-title">USD/EUR</p>
+<p class="data__chart-date">
+  0.8530 · May 14 16:00 CET
+</p>
+</div>
+
+<div class="data__chart-graphic">
+<div class="data__chart--y-line">
+<!-- --- y-axis --- -->
+ <div class="data__chart-y">
+  <p class="y-axis-rate">0.8612</p>
+   <p class="y-axis-rate">0.8516</p>
+    <p class="y-axis-rate">0.8412</p>
+ </div>
+
+ <!-- --- line chart --- -->
+  <div class="data__chart-wrapper">
+    <div class="data__chart-gradient">
+      <div class="middle-line"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="944" height="272" viewBox="0 0 944 272" fill="none">
+  <path d="M0 99.14L7.93301 94.55L15.866 71.04L23.799 58.76L31.732 78.72L39.6651 103.3L47.5981 97.84L55.5311 105.12L63.4641 108.57L71.3971 135.38L79.3301 135.32L87.2631 169.39L95.1961 159.47L103.129 163.1L111.062 154.26L118.995 151.56L126.928 138.67L134.861 126.39L142.794 133.95L150.727 125.55L158.66 95.53L166.593 100.67L174.526 72.34L182.459 84.28L190.392 111.56L198.325 119.59L206.258 144.13L214.191 130.72L222.124 167.09L230.057 176.56L237.976 164.86L245.909 179.42L253.842 187.55L261.775 182.15L269.708 205.84L277.641 162.98L285.574 201.12L293.507 227.94L301.44 250.2L309.373 209.94L317.306 208.96L325.239 204.61L333.172 215.91L341.105 202.48L349.038 174.92L356.971 209.09L364.904 209.45L372.837 234.03L380.77 272L388.703 234.19L396.636 206.94L404.569 175.46L412.502 144.68L420.435 157.06L428.368 190.9L436.301 201.06L444.234 236.67L452.167 248.59L460.1 215.23L468.033 238.12L475.967 198.24L483.9 223.4L491.833 237.91L499.766 232.7L507.699 267.27L515.632 257.55L523.565 270.87L531.498 247.93L539.431 244.1L547.364 208.82L555.297 219.73L563.23 208.37L571.163 220.64L579.096 204.31L587.029 183.82L594.962 141.28L602.895 158.7L610.828 117.35L618.761 80.28L626.694 78.3L634.627 78.29L642.56 65.35L650.493 60.37L658.426 54.32L666.359 61.51L674.292 19.77L682.225 10.88L690.158 53.87L698.091 94.9L706.024 91.61L713.943 121.79L721.876 153.45L729.809 176.39L737.742 181.14L745.675 140.1L753.608 126.71L761.541 144.59L769.474 106.2L777.407 66.89L785.34 65.29L793.273 41.88L801.206 24.15L809.139 61.19L817.072 37.21L825.005 0L832.938 5.95L840.871 34.25L848.804 38.39L856.737 38.92L864.67 43.6L872.603 24.47L880.536 41.5L888.469 48.85L896.402 41.46L904.335 62.67L912.268 102.23L920.201 97.21L928.134 83.3L936.067 61.65L944 19.3V272H0V99.14Z" fill="url(#paint0_linear_75_518)"/>
+  <defs>
+    <linearGradient id="paint0_linear_75_518" x1="0" y1="0" x2="0" y2="272" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#CEF739"/>
+      <stop offset="1" stop-color="#171719" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg> 
+    <div class="data__chart--line-chart"><svg xmlns="http://www.w3.org/2000/svg" width="946" height="274" viewBox="0 0 946 274" fill="none">
+  <path d="M0.500977 100.14L8.43399 95.55L16.367 72.04L24.3 59.76L32.233 79.72L40.166 104.3L48.099 98.84L56.0321 106.12L63.9651 109.57L71.8981 136.38L79.8311 136.32L87.7641 170.39L95.6971 160.47L103.63 164.1L111.563 155.26L119.496 152.56L127.429 139.67L135.362 127.39L143.295 134.95L151.228 126.55L159.161 96.53L167.094 101.67L175.027 73.34L182.96 85.28L190.893 112.56L198.826 120.59L206.759 145.13L214.692 131.72L222.625 168.09L230.558 177.56L238.477 165.86L246.41 180.42L254.343 188.55L262.276 183.15L270.209 206.84L278.142 163.98L286.075 202.12L294.008 228.94L301.941 251.2L309.874 210.94L317.807 209.96L325.74 205.61L333.673 216.91L341.606 203.48L349.539 175.92L357.472 210.09L365.405 210.45L373.338 235.03L381.271 273L389.204 235.19L397.137 207.94L405.07 176.46L413.003 145.68L420.936 158.06L428.869 191.9L436.802 202.06L444.735 237.67L452.668 249.59L460.601 216.23L468.534 239.12L476.467 199.24L484.4 224.4L492.334 238.91L500.266 233.7L508.199 268.27L516.132 258.55L524.066 271.87L531.999 248.93L539.932 245.1L547.865 209.82L555.798 220.73L563.731 209.37L571.664 221.64L579.597 205.31L587.53 184.82L595.463 142.28L603.396 159.7L611.329 118.35L619.262 81.28L627.195 79.3L635.128 79.29L643.061 66.35L650.994 61.37L658.927 55.32L666.86 62.51L674.793 20.77L682.726 11.88L690.659 54.87L698.592 95.9L706.525 92.61L714.444 122.79L722.377 154.45L730.31 177.39L738.243 182.14L746.176 141.1L754.109 127.71L762.042 145.59L769.975 107.2L777.908 67.89L785.841 66.29L793.774 42.88L801.707 25.15L809.64 62.19L817.573 38.21L825.506 1L833.439 6.95L841.372 35.25L849.305 39.39L857.238 39.92L865.171 44.6L873.104 25.47L881.037 42.5L888.97 49.85L896.903 42.46L904.836 63.67L912.769 103.23L920.702 98.21L928.635 84.3L936.568 62.65L944.501 20.3" stroke="#CEF739" stroke-width="2" stroke-linejoin="round"/></div>
+</svg></div>
+
+  <!-- --- x-axis --- -->
+   <div class="data__chart-x">
+    <p class="x-axis-date">Apr 14</p>
+    <p class="x-axis-date">Apr 21</p>
+    <p class="x-axis-date">Apr 28</p>
+    <p class="x-axis-date">May 06</p>
+    <p class="x-axis-date">May 14</p>
+   </div>
+</div></div>
+
+    <!-- --- empty message --- -->
+    <div class="data__chart--empty">
+      <h2 class="data_empty--h2">
+No chart data available
+      </h2>
+      <p class="data__empty-p">
+        We couldn't load rate history for [pair] right now.
+    This usually clears up in a minute.
+      </p>
+    </div>   
+  </div>
+  </div></div>
+
+
+
+
+<!-- 📌--- compare container --- -->
+
+<div class="compare-container hide">
+  <div class="compare__title">
+    <div class="compare__currency-amount">
+      <p class="compare__p">Multi-currency</p>
+      <p class="compare__amount">1,000 from USD</p>
+    </div>
+    <p class="compare__pairs">8 pairs</p>
+  </div>
+
+  <div class="compare__cards-wrapper">
+    <!-- --- card 1--- -->
+    <div class="compare__card">
+      <div class="flag-currency">
+      <div class="currency-flag compare-flag"></div>
+      <div class="compare__currency-text">
+        <p class="compare__currency">GBP</p>
+        <p class="currency-small compare__text">British Pound</p>
+      </div></div>
+
+      <div class="rate-star">
+      <div class="compare__number-rate">
+        <p class="compare__currency compare__number">736.65</p>
+        <p class="currency-small compare__rate">@0.7366</p>
+      </div>
+<div class="compare__star"></div></div></div>
+
+ <!-- --- card 2--- -->
+    <div class="compare__card">
+      <div class="flag-currency">
+      <div class="currency-flag compare-flag02"></div>
+      <div class="compare__currency-text">
+        <p class="compare__currency">JPY</p>
+        <p class="currency-small compare__text">Japanese Yen</p>
+      </div></div>
+
+      <div class="rate-star">
+      <div class="compare__number-rate">
+        <p class="compare__currency compare__number">157,910</p>
+        <p class="currency-small compare__rate">@157.91</p>
+      </div>
+<div class="compare__star"></div></div></div>
+
+ <!-- --- card 3--- -->
+    <div class="compare__card">
+      <div class="flag-currency">
+      <div class="currency-flag compare-flag03"></div>
+      <div class="compare__currency-text">
+        <p class="compare__currency">CHF</p>
+        <p class="currency-small compare__text">Swiss Franc</p>
+      </div></div>
+
+      <div class="rate-star">
+      <div class="compare__number-rate">
+        <p class="compare__currency compare__number">909.80</p>
+        <p class="currency-small compare__rate">@0.9098</p>
+      </div>
+<div class="compare__star compare__star-inactive"></div></div></div>
+
+<!-- --- wrapper ends --- -->
+</div>
+
+
+<!-- --- empty message --- -->
+<div class="compare__empty-wrapper">
+  <h2 class="compare__h2">No comparison available</h2>
+  <p class="compare__empty-p">
+    Enter an amount in Send above to see what your money
+    is worth in other currencies.
+  </p>
+</div>
+  </div>
+
+
+
+<!-- 📌--- favorite container --- -->
+<div class="compare-container fav-container hide">
+  <div class="compare__title fav__title">
+      <p class="fav__p">Pinned Pairs</p>
+    <p class="compare__pairs fav__pairs">10 favorites</p>
+  </div>
+
+  <!-- --- pairs item 01 --- -->
+
+  <div class="compare__cards-wrapper fav__cards-wrapper">
+    <div class="compare__card fav__card">
+      <div class="fav__currency-pair">
+<p class="fav__currency">GBP</p>
+<div class="fav__arrow"></div>
+<p class="fav__currency fav__currency2">USD</p></div>
+
+<div class="fav-rate-star">
+      <div class="compare__number-rate fav__number-rate">
+        <p class="compare__number fav__number">0.8530</p>
+        <div class="compare__rate fav__rate fav__rate--active"><div class="rate-triangle-green "></div>+0.16%</div>
+      </div>
+<div class="compare__star fav__star"></div>
+    </div></div>
+  </div>
+
+    <!-- --- pairs item 02 --- -->
+
+  <div class="compare__cards-wrapper fav__cards-wrapper">
+    <div class="compare__card fav__card">
+      <div class="fav__currency-pair">
+<p class="fav__currency">USD</p>
+<div class="fav__arrow"></div>
+<p class="fav__currency fav__currency2">EUR</p></div>
+
+<div class="fav-rate-star">
+      <div class="compare__number-rate fav__number-rate">
+        <p class="compare__number fav__number">1.3575</p>
+        <div class="compare__rate fav__rate fav__rate--active  fav__rate--inactive"><div class="rate-triangle-green rate-triangle-red"></div>+0.22%</div>
+      </div>
+<div class="compare__star fav__star"></div>
+    </div></div>
+  </div>
+
+
+  <!-- --- empty message --- -->
+   <div class="fav__empty-wrapper">
+    <h2 class="fav__empty-h2">No pinned pairs yet</h2>
+    <p class="fav__empty-p">
+      Pin a pair to track its rate here. Tap the star icon on
+    any conversion or comparison row.
+    </p>
+   </div>
+
+</div>
+
+
+<!-- 📌--- log container --- -->
+
+<div class="compare-container log-container hide">
+<div class="log__wrapper">
+  <div class="log__title compare__title">
+  <p class="log__p">Conversion log</p>
+  <div class="log__number-btn">
+    <p class="compare__logged">8 Logged</p>
+    <button class="outlined-btn gray-outlined-btn" type="button">Clear all</button>
+  </div></div>
+
+  <div class="compare__card log__card">
+
+    <div class="log-date-currency">
+<p class="log__date">20M</p>
+
+      <div class="fav__currency-pair">
+<p class="fav__currency1 log__currency1">EUR</p>
+<div class="fav__arrow"></div>
+<p class="fav__currency2 log__currency2">JPY</p></div></div>
+
+<div class="log__three-items">
+  <p class="log__send">1,000.00</p>
+  <p class="log__receive">853.02</p>
+  <div class="log__delete-icon"></div>
+</div>
+
+  </div>
+</div>
+
+<!-- --- empty message --- -->
+
+<div class="log__empty-wrapper">
+  <h2 class="log__empty-h2">
+    No conversions logged yet
+  </h2>
+  <p class="log__empty-p">
+    Every conversion is recorded here automatically
+    when you tap Log conversion. Your log is private to this session and this
+    browser.
+  </p>
+</div>
+
+</div>
+
+<!-- --- main container ends --- -->
+</section>
+
+
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>
