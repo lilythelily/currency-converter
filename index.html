@@ -19,7 +19,7 @@
     <header>
       <div class="header-logo"><img src="./assets/images/logo.svg" alt="logo"></div>
       <div class="top-data">
-          <div class="top__currencies-number">55 currencies</div>
+          <div class="top__currencies-number">58 currencies</div>
         <p class="top__currencies-number top__currencies-eod">· EOD</p>
         <p class="top__currencies-number top__currencies-ecb">· ECB data</p>
       </div>
@@ -30,29 +30,19 @@
     <section class="section-ticker">
       <div class="ticker__title"><div class="circle"></div>Live markets</div>
 
-      <!-- ---item1--- -->
+<div class="ticker__wrapper">
       <div class="ticker__container">
         <div class="ticker__pairs">
-          <div class="ticker__pairs--currencies">USD/JPY</div>
-          <div class="ticker__pairs--number">157.91</div>
+          <div class="ticker__pairs--currencies"></div>
+          <div class="ticker__pairs--number"></div>
           <div class="ticker__pairs--movement">
-            <div class="ticker__pairs--rectangle"></div>
-            +0.04%
-          </div>
-        </div>
-      </div>
+            <div class="ticker__pairs--triangle"></div>
 
-      <!-- --- item 2--- -->
-          <div class="ticker__container">
-        <div class="ticker__pairs">
-          <div class="ticker__pairs--currencies">USD/JPY</div>
-          <div class="ticker__pairs--number">157.91</div>
-          <div class="ticker__pairs--movement">
-            <div class="ticker__pairs--rectangle"></div>
-            +0.04%
           </div>
         </div>
-      </div>
+      </div></div>
+
+
     </section>
 
 <main>
@@ -85,7 +75,7 @@ Check the rate
 <div class="currency-category">
 <div class="currency-title-number">
 <p class="currency-title">popular</p>
-<p class="currency-number">3</p></div>
+<p class="currency-number popular-number">3</p></div>
 
 <ul class="currency-popular-list popular-dropdown">
   <li>
@@ -109,7 +99,7 @@ Check the rate
 <div class="currency-category">
 <div class="currency-title-number">
 <p class="currency-title">other currencies</p>
-<p class="currency-number">165</p></div>
+<p class="currency-number other-currency-number"></p></div>
 
 <ul class="currency-popular-list other-dropdown">
   <li>
@@ -141,10 +131,10 @@ Check the rate
 
     <!-- --- currency picker --- -->
      <div class="currency-picker-wrapper02">
-<button type="button" class="currency-dropdown-btn currency-dropdown-btn02"><div class="currency-flag currency-flag2"></div>EUR<div class="currency-caret"></div></button>
+<button type="button" class="currency-dropdown-btn currency-dropdown-btn02"><div class="currency-flag eu-flag"></div>EUR<div class="currency-caret"></div></button>
 
 <!-- --- currency dropdown list --- -->
-<form class="currency-dropdown currency-dropdown02 hide">
+<form class="currency-dropdown currency-dropdown02">
   <div class="input-magnifying">
 <input type="text" name="currency-search" id="currency-search" class="currency-search" placeholder="Search currencies..."></div>
 
@@ -155,14 +145,18 @@ Check the rate
 <p class="currency-number">3</p></div>
 
 <ul class="currency-popular-list">
-  <li>
+   <li>
     <div class="flag-small">
     <div class="currency-flag"></div>USD<p class="currency-small">US Dollar</p></div>
     <div class="currecy-check"></div></li>
-      <li>
+     <li>
     <div class="flag-small">
-    <div class="currency-flag currency-flag2"></div>EU<p class="currency-small">Euro</p></div>
-    <div class="currecy-check hide"></div></li>
+    <div class="currency-flag eu-flag"></div>EUR<p class="currency-small">Euro</p></div>
+    <div class="currecy-check"></div></li>
+     <li>
+    <div class="flag-small">
+    <div class="currency-flag uk-flag"></div>GBP<p class="currency-small">British Pound</p></div>
+    <div class="currecy-check"></div></li>
 </ul>
 </div>
 
@@ -171,17 +165,13 @@ Check the rate
 <div class="currency-category">
 <div class="currency-title-number">
 <p class="currency-title">other currencies</p>
-<p class="currency-number">165</p></div>
+<p class="currency-number other-currency-number"></p></div>
 
-<ul class="currency-popular-list">
+<ul class="currency-popular-list other-dropdown02">
   <li>
     <div class="flag-small">
     <div class="currency-flag"></div>AED<p class="currency-small">UAE Dirham</p></div>
     <div class="currecy-check"></div></li>
-      <li>
-    <div class="flag-small">
-    <div class="currency-flag currency-flag2"></div>ARS<p class="currency-small">Argentine Peso</p></div>
-    <div class="currecy-check hide"></div></li>
 </ul>
 </div>
 

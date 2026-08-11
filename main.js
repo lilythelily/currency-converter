@@ -4,153 +4,184 @@
 
 async function fetchData() {
   const url = "https://api.frankfurter.dev/v2/currencies";
+  const url02 = "https://api.frankfurter.dev/v2/rates?base=USD";
+
+  function getYesterdayDate() {
+    const d = new Date();
+    d.setDate(d.getDate() - 1);
+    return d.toISOString().split("T")[0];
+  }
+  const yesterday = getYesterdayDate();
+  const urlYesterday = `https://api.frankfurter.dev/v2/rates?base=USD&date=${yesterday}`;
+
   try {
     const res = await fetch(url);
+    const res2 = await fetch(url02);
+    const res3 = await fetch(urlYesterday);
     if (!res.ok) {
       throw new Error("failed to fetch data");
     }
     const data = await res.json();
+    const data2 = await res2.json();
+    const data3 = await res3.json();
     console.log(data);
+    console.log(data2);
+    console.log(data3);
 
-    // === dynamically insert data into dropdown ===
+    const mainCurrencies = {
+      AUD: "au",
+      CAD: "ca",
+      CHF: "ch",
+      CNY: "cn",
+      EUR: "eu",
+      GBP: "gb",
+      HKD: "hk",
+      JPY: "jp",
+      KRW: "kr",
+      NZD: "nz",
+      RUB: "ru",
+      USD: "us",
+    };
 
-    // const targetCurrencies = {
-    //   ae: data[0],
-    //   ar: data[6],
-    //   au: data[7],
-    //   bd: data[116],
-    //   bg: data[12],
-    //   bh: data[13],
-    //   br: data[18],
-    //   ca: data[24],
-    //   ch:data[26],
-    //   cl: data[27],
-    //   cn: data[29],
-    //   co: data[30],
-    //   cy: data[29],
-    //   cz: data[34],
-    //   dk: data[36],
-    //   eg: data[39],
-    //   eu: data[42],
-    //   gb: data[45],
-    //   hk: data[54],
-    //   hm: data[55],
-    //   hn: data[55],
-    //   hr: data[57],
-    //   ht: data[56],
-    //   hu: data[57],
-    //   id: data[58],
-    //   in: data[61],
-    //   is: data[64],
-    //   jo: data[67],
-    //   jp: data[68],
-    //   ke: data[69],
-    //   kr: data[74],
-    //   kw: data[75],
-    //   lb: data[79],
-    //   lc: data[78],
-    //   lk: data[80],
-    //   ma: data[84],
-    //   mx: data[96],
-    //   my: data[97],
-    //   ng: data[100],
-    //   no: data[102],
-    //   np: data[103],
-    //   nz: data[104],
-    //   om: data[105],
-    //   pe: data[107],
-    //   ph: data[109],
-    //   pk: data[110],
-    //   pl: data[111],
-    //   qa: data[113],
-    //   ro: data[114],
-    //   ru: data[116],
-    //   sa: data[118],
-    //   se: data[122],
-    //   sg: data[123],
-    //   th: data[133],
-    //   tr: data[138],
-    //   tw: data[140],
-    //   ua: data[142],
-    //   us: data[144],
-    //   vn: data[148],
-    //   za: data[162],
-    // };
-      
-      const targetCurrencies = {
-        AED: "ae",
-        ARS: "ar",
-        AUD: "au",
-        BDT: "bd",
-        BGN: "bg",
-        BHD: "bh",
-        BRL: "br",
-        CAD: "ca",
-        CHF: "ch",
-        CLP: "cl",
-        CNY: "cn",
-        COP: "co",
-        CYP: "cy",
-        CZK: "cz",
-        DKK: "dk",
-        EGP: "eg",
-        EUR: "eu",
-        GBP: "gb",
-        HKD: "hk",
-        HNL: "hn",
-        HRK: "hr",
-        HTG: "ht",
-        HUF: "hu",
-        IDR: "id",
-        INR: "in",
-        ISK: "is",
-        JOD: "jo",
-        JPY: "jp",
-        KES: "ke",
-        KRW: "kr",
-        KWD: "kw",
-        LBP: "lb",
-        LKR: "lk",
-        MAD: "ma",
-        MXN: "mx",
-        MYR: "my",
-        NGN: "ng",
-        NOK: "no",
-        NPR: "np",
-        NZD: "nz",
-        OMR: "om",
-        PEN: "pe",
-        PHP: "ph",
-        PKR: "pk",
-        PLN: "pl",
-        QAR: "qa",
-        RON: "ro",
-        RUB: "ru",
-        SAR: "sa",
-        SEK: "se",
-        SGD: "sg",
-        THB: "th",
-        TRY: "tr",
-        TWD: "tw",
-        UAH: "ua",
-        USD: "us",
-        VND: "vn",
-        ZAR: "za",
-      };
-   
+    const targetCurrencies = {
+      AED: "ae",
+      ARS: "ar",
+      AUD: "au",
+      BDT: "bd",
+      BGN: "bg",
+      BHD: "bh",
+      BRL: "br",
+      CAD: "ca",
+      CHF: "ch",
+      CLP: "cl",
+      CNY: "cn",
+      COP: "co",
+      CYP: "cy",
+      CZK: "cz",
+      DKK: "dk",
+      EGP: "eg",
+      EUR: "eu",
+      GBP: "gb",
+      HKD: "hk",
+      HNL: "hn",
+      HRK: "hr",
+      HTG: "ht",
+      HUF: "hu",
+      IDR: "id",
+      INR: "in",
+      ISK: "is",
+      JOD: "jo",
+      JPY: "jp",
+      KES: "ke",
+      KRW: "kr",
+      KWD: "kw",
+      LBP: "lb",
+      LKR: "lk",
+      MAD: "ma",
+      MXN: "mx",
+      MYR: "my",
+      NGN: "ng",
+      NOK: "no",
+      NPR: "np",
+      NZD: "nz",
+      OMR: "om",
+      PEN: "pe",
+      PHP: "ph",
+      PKR: "pk",
+      PLN: "pl",
+      QAR: "qa",
+      RON: "ro",
+      RUB: "ru",
+      SAR: "sa",
+      SEK: "se",
+      SGD: "sg",
+      THB: "th",
+      TRY: "tr",
+      TWD: "tw",
+      UAH: "ua",
+      USD: "us",
+      VND: "vn",
+      ZAR: "za",
+    };
 
+    //    === dynamically insert into ticker ===
+
+    const tickerContainer = document.querySelector(".ticker__wrapper");
+
+    const mainByCode = Object.fromEntries(
+      data2.map((entry) => [entry.quote, entry.rate])
+    );
+    const mainYesterday = Object.fromEntries(
+      data3.map((entry) => [entry.quote, entry.rate])
+    );
+
+    tickerContainer.innerHTML = Object.entries(mainCurrencies)
+      .map(([quote, code]) => {
+        const rate = mainByCode[quote];
+        const rateYesterday = mainYesterday[quote];
+
+        if (rate === undefined || rateYesterday === undefined) return "";
+
+        const difference = ((rate - rateYesterday) / rateYesterday) * 100;
+        const sign = difference >= 0 ? "+" : "";
+        const formattedDifference = `${sign}${difference.toFixed(2)}%`;
+        const isUp = difference >= 0;
+
+        return `
+      <div class="ticker__container">
+        <div class="ticker__pairs">
+          <div class="ticker__pairs--currencies">USD/${quote}</div>
+          <div class="ticker__pairs--number">${rate}</div>
+          <div class="ticker__pairs--movement">
+          <div class=" ${isUp ? "up" : "down"}"></div>
+<div class="${isUp ? "fav__rate--active" : "fav__rate--inactive"}">
+            ${formattedDifference}</div>
+          </div>
+        </div>
+      </div>
+          `;
+      })
+      .join("");
+
+    // === dynamically insert data into currency pickers ===
+    const currencyByCode = Object.fromEntries(
+      data.map((entry) => [entry.iso_code, entry])
+    );
 
     const otherList = document.querySelector(".other-dropdown");
+    const otherList02 = document.querySelector(".other-dropdown02");
+    const currencyNumbers = document.querySelectorAll(".other-currency-number");
 
-      otherList.innerHTML = Object.entries(targetCurrencies).map(({ iso_code, name }) => {
-        
+    currencyNumbers.forEach((number) => {
+      number.innerHTML = Object.keys(targetCurrencies).length;
+    });
+
+    otherList02.innerHTML = Object.entries(targetCurrencies)
+      .map(([code, flagCode]) => {
+        const currencyInfo = currencyByCode[code];
+        if (!currencyInfo) return "";
 
         return `<li><div class="flag-small">
             <div class="currency-flag currency-flag2"
-style = "background-image: url('./assets/images/flags/au.webp')
+style = "background-image: url('./assets/images/flags/${flagCode}.webp')
 
            "
-            ></div>${iso_code}<p class="currency-small">${name}</p></div>
+            ></div>${code}<p class="currency-small">${currencyInfo.name}</p></div>
+            <div class="currecy-check"></div></li>`;
+      })
+      .join("");
+
+    otherList.innerHTML = Object.entries(targetCurrencies)
+      .map(([code, flagCode]) => {
+        const currencyInfo = currencyByCode[code];
+        if (!currencyInfo) return "";
+
+        return `<li><div class="flag-small">
+            <div class="currency-flag currency-flag2"
+style = "background-image: url('./assets/images/flags/${flagCode}.webp')
+
+           "
+            ></div>${code}<p class="currency-small">${currencyInfo.name}</p></div>
             <div class="currecy-check"></div></li>`;
       })
       .join("");

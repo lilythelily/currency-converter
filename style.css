@@ -84,11 +84,14 @@ header {
   font-weight: var(--fw500);
   letter-spacing: var(--letter-spacing-5);
   line-height: var(--line-height130);
-  padding: 12px 16px;
-  display: inline-flex;
+padding: 0 8px;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 8px;
   text-transform: uppercase;
+  text-wrap: nowrap;
+  height: 44px;
 }
 
 .circle {
@@ -126,10 +129,28 @@ header {
   gap: 4px;
 }
 
-.ticker__pairs--rectangle {
+.ticker__pairs--triangle {
   width: 10px;
   height: 10px;
   background-image: url("./assets/images/green-triangle.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.up{
+    width: 10px;
+  height: 10px;
+   background-image: url("./assets/images/green-triangle.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.down{
+    width: 10px;
+  height: 10px;
+   background-image: url("./assets/images/red-triangle.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -147,10 +168,18 @@ header {
   background-color: var(--neutral700);
 }
 
+.ticker__wrapper{
+  display: flex;
+
+}
+
 .section-ticker {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  overflow-x:scroll;
+width: 100%;
+
 }
 
 /* === converter section === */
