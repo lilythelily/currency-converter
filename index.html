@@ -59,11 +59,11 @@ Check the rate
 <div class="converter__send-wrapper">
   <div class="converter__action-amount">
   <label for="send-amount" class="converter__action">Send</p>
-  <input type="text" name="send-amount" id="send-amount" class="converter__amount" placeholder="1,000"></input></div>
+  <input type="text" name="send-amount" id="send-amount" class="converter__amount" placeholder="1,000" value=""></input></div>
 
   <!-- --- currency picker --- -->
    <div class="currency-picker-wrapper01">
-<button type="button" class="currency-dropdown-btn"><div class="currency-flag"></div>USD<div class="currency-caret"></USDdiv></button>
+<button type="button" class="currency-dropdown-btn"><div class="currency-flag"></div>USD<div class="currency-caret"></div></button>
 
 
 <!-- --- currency dropdown list --- -->
@@ -78,18 +78,18 @@ Check the rate
 <p class="currency-number popular-number">3</p></div>
 
 <ul class="currency-popular-list popular-dropdown">
-  <li>
+  <li role="option" aria-selected="false" data-value="USD">
     <div class="flag-small">
     <div class="currency-flag"></div>USD<p class="currency-small">US Dollar</p></div>
-    <div class="currecy-check"></div></li>
-     <li>
+    <div class="currency-check"></div></li>
+     <li role="option" aria-selected="false" data-value="EUR">
     <div class="flag-small">
     <div class="currency-flag eu-flag"></div>EUR<p class="currency-small">Euro</p></div>
-    <div class="currecy-check"></div></li>
-     <li>
+    <div class="currency-check"></div></li>
+     <li role="option" aria-selected="false" data-value="GBP">
     <div class="flag-small">
     <div class="currency-flag uk-flag"></div>GBP<p class="currency-small">British Pound</p></div>
-    <div class="currecy-check"></div></li>
+    <div class="currency-check"></div></li>
 
 </ul>
 </div>
@@ -105,7 +105,7 @@ Check the rate
   <li>
     <div class="flag-small">
     <div class="currency-flag currency-flag2"></div>AED<p class="currency-small">UAE Dirham</p></div>
-    <div class="currecy-check"></div></li>
+    <div class="currency-check"></div></li>
       
 </ul>
 </div>
@@ -127,7 +127,7 @@ Check the rate
 <div class="converter__send-wrapper">
   <div class="converter__action-amount">
   <label for="receive-amount" class="converter__action">Receive</p>
-  <input type="text" name="receive-amount" id="receive-amount" class="converter__amount converter__amount--receive" placeholder="853.02"></input></div>
+  <input type="text" name="receive-amount" id="receive-amount" value="" class="converter__amount converter__amount--receive" placeholder="853.02"></input></div>
 
     <!-- --- currency picker --- -->
      <div class="currency-picker-wrapper02">
@@ -144,19 +144,19 @@ Check the rate
 <p class="currency-title">popular</p>
 <p class="currency-number">3</p></div>
 
-<ul class="currency-popular-list">
-   <li>
+<ul class="currency-popular-list popular-dropdown2">
+   <li role="option" aria-selected="false" data-value="USD">
     <div class="flag-small">
     <div class="currency-flag"></div>USD<p class="currency-small">US Dollar</p></div>
-    <div class="currecy-check"></div></li>
-     <li>
+    <div class="currency-check"></div></li>
+     <li role="option" aria-selected="false" data-value="EUR">
     <div class="flag-small">
     <div class="currency-flag eu-flag"></div>EUR<p class="currency-small">Euro</p></div>
-    <div class="currecy-check"></div></li>
-     <li>
+    <div class="currency-check"></div></li>
+     <li role="option" aria-selected="false" data-value="GBP">
     <div class="flag-small">
     <div class="currency-flag uk-flag"></div>GBP<p class="currency-small">British Pound</p></div>
-    <div class="currecy-check"></div></li>
+    <div class="currency-check"></div></li>
 </ul>
 </div>
 
@@ -168,10 +168,10 @@ Check the rate
 <p class="currency-number other-currency-number"></p></div>
 
 <ul class="currency-popular-list other-dropdown02">
-  <li>
+  <li role="option" aria-selected="false" data-value="">
     <div class="flag-small">
     <div class="currency-flag"></div>AED<p class="currency-small">UAE Dirham</p></div>
-    <div class="currecy-check"></div></li>
+    <div class="currency-check"></div></li>
 </ul>
 </div>
 
@@ -183,7 +183,7 @@ Check the rate
 </div>
 </div>
 <div class="converter__bottom-wrapper">
-  <p class="converter__exchange-rate">1 USD = 0.8530 EUR</p>
+  <p class="converter__exchange-rate">1 USD = <span class="exchange-rate">0.8530</span> <span class="target-currency">EUR</span></p>
 <div class="converter__two-btns">
   <button type="button" class="filled-btn"><div class="star-icon"></div>Favorited</button>
   <button type="button" class="outlined-btn">Log conversion</button>
@@ -218,11 +218,11 @@ Check the rate
     <div class="data__cards-wrapper">
       <div class="data__card">
         <p class="data__card--title">Open</p>
-        <p class="data__card--rate">0.8516</p>
+        <p class="data__card--rate" id="open-rate">0.8516</p>
       </div>
           <div class="data__card">
         <p class="data__card--title">Last</p>
-        <p class="data__card--rate data__card--rate-last">0.8530</p>
+        <p class="data__card--rate data__card--rate-last" id="last-rate">0.8530</p>
       </div>
 
         <div class="data__card">
@@ -296,7 +296,7 @@ Check the rate
 </div></div>
 
     <!-- --- empty message --- -->
-    <div class="data__chart--empty">
+    <div class="data__chart--empty hide">
       <h2 class="data_empty--h2">
 No chart data available
       </h2>
@@ -376,7 +376,7 @@ No chart data available
 
 
 <!-- --- empty message --- -->
-<div class="compare__empty-wrapper">
+<div class="compare__empty-wrapper hide">
   <h2 class="compare__h2">No comparison available</h2>
   <p class="compare__empty-p">
     Enter an amount in Send above to see what your money
@@ -432,7 +432,7 @@ No chart data available
 
 
   <!-- --- empty message --- -->
-   <div class="fav__empty-wrapper">
+   <div class="fav__empty-wrapper hide">
     <h2 class="fav__empty-h2">No pinned pairs yet</h2>
     <p class="fav__empty-p">
       Pin a pair to track its rate here. Tap the star icon on
@@ -451,7 +451,7 @@ No chart data available
   <p class="log__p">Conversion log</p>
   <div class="log__number-btn">
     <p class="compare__logged">8 Logged</p>
-    <button class="outlined-btn gray-outlined-btn" type="button">Clear all</button>
+    <button class="outlined-btn gray-outlined-btn" type="button" id="clear-btn">Clear all</button>
   </div></div>
 
   <div class="compare__card log__card">
@@ -475,7 +475,7 @@ No chart data available
 
 <!-- --- empty message --- -->
 
-<div class="log__empty-wrapper">
+<div class="log__empty-wrapper hide">
   <h2 class="log__empty-h2">
     No conversions logged yet
   </h2>
